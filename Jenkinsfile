@@ -11,20 +11,20 @@
 11      }
 12      stage ("Clone repo"){
 13         steps {
-14             sh "git clone https://github.com/MaBouz/exp1.spring.git"
+14             sh "git clone https://github.com/ahmedlk4785/exp1spring.git"
 15         }
 16      }
-17       stage ("Generate backend image") {
+17       stage ("Generate image") {
 18           steps {
-19               dir("exp1.spring"){
+19               dir("exp1spring"){
 20                   sh "mwn clean install"
-21                   sh "docker build -t docexp1.spring ."
+21                   sh "docker build -t tp2jenk ."
 22               }
 23           }
 24       }
 25       stage ("Run docker compose") {
 26           steps {
-27               dir("exp1.spring"){
+27               dir("exp1spring"){
 28                   sh " docker compose up -d"
 29               }
 30           }
